@@ -1,0 +1,2 @@
+$('.show-<%= @task.id %>').remove();
+$('.item-<%= @task.id %>').append("<div class='show-<%= @task.id %>'><%= @task.description %></div>");

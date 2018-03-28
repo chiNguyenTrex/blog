@@ -1,0 +1,11 @@
+<div class="list-task">
+  <% if task %>
+    <ul class="item-<%= task.id %>">
+      <li>
+        <%= task.name %>
+        <%= link_to "Show", task, remote: true %>
+        <%= link_to "Delete", task_path(task), method: :delete, remote: true %>
+      </li>
+    </ul>
+  <% end %>
+</div>

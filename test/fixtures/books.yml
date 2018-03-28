@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  author: one
+  genre: one
+
+two:
+  name: MyString
+  author: two
+  genre: two
