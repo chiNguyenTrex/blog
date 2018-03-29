@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   # OR get "welcome/demo_route" => "welcome#demo_route"
 
   resources :articles
+  resources :events
+  resources :books
 end
