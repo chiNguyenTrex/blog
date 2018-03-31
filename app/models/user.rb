@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-    :trackable, :validatable
+    :trackable, :validatable, :confirmable, :lockable
 
   has_one :address
 
@@ -15,4 +15,9 @@ class User < ApplicationRecord
   has_many :comments
 
   delegate :street, :city, to: :address
+
+
+  def send_devise_notification notification, *args
+    devise_mailer.send(notification, self, *args).deliver_now
+  end
 end
