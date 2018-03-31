@@ -1,0 +1,7 @@
+<% if @events %>
+  <% @events.each do |event| %>
+    <p><%= event.name %><%= link_to "Show", event_path(event) %></p>
+  <% end %>
+<% end %>
+<%= link_to "New event", new_event_path %>
+

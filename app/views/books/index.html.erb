@@ -1,0 +1,6 @@
+<% if @books %>
+  <% @books.each do |book| %>
+    <p><%= book.name %><%= link_to "Show", book_path(book) %></p>
+  <% end %>
+<% end %>
+<%= link_to "New book", new_book_path %>

@@ -3,4 +3,6 @@ class Event < ApplicationRecord
   has_many :participants, through: :event_participations, source: :user
 
   has_many :comments, as: :commentable
+
+  validates :name, presence: true
 end

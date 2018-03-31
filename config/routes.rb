@@ -1,17 +1,33 @@
 Rails.application.routes.draw do
+  get 'events/index'
+
+  get 'events/new'
+
+  get 'events/show'
+
+  get 'events/create'
+
+  get 'events/update'
+
+  get 'books/index'
+
+  get 'books/new'
+
+  get 'books/show'
+
+  get 'books/create'
+
+  get 'books/update'
+
+  devise_for :users
   resources :tasks
   resources :informs
-
-  root 'welcome#index' # root_path
-
-  get "welcome/hello"
-  get "welcome/fix_hello"
-  get "welcome/welcome"
-  get "welcome/another_hello"
-  get "welcome/demo_route", to: "welcome#demo_route" #welcome_demo_route_path
-  # OR get "welcome/demo_route" => "welcome#demo_route"
-
+  resources :addresses
   resources :articles
   resources :events
   resources :books
+  resources :genres
+
+  root 'welcome#index' # root_path
+
 end

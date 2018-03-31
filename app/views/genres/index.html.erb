@@ -1,0 +1,6 @@
+<% if @genres %>
+  <% @genres.each do |genre| %>
+    <p><%= genre.name %></p>
+  <% end %>
+<% end %>
+<%= link_to "Create new genre", new_genre_path %>

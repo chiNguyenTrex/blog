@@ -11,5 +11,8 @@ module Blog
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     config.generators.system_tests = nil
+    config.generators do |generator|
+      generator.assets false
+    end
   end
 end

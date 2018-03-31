@@ -4,6 +4,8 @@ class Book < ApplicationRecord
 
   has_many :comments, as: :commentable
 
-  delegate :name, :country, to: :author, prefix: true
+  delegate :name, to: :author, prefix: true
   delegate :name, to: :genre, prefix: true
+
+  validates :name, presence: true
 end
