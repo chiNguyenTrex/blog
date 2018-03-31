@@ -1,11 +1,21 @@
 module ApplicationHelper
-  def flash_type type
+  def bootstrap_flash_type type
     case type
-    when :notice then "alert-info"
-    when :error then "alert-danger"
-    when :alert then "alert-warning"
-    when :success then "alert-success"
-    when :danger then "alert-danger"
+    when :notice then "info"
+    when :error then "danger"
+    when :alert then "warning"
+    when :success then "success"
+    when :danger then "danger"
+    end
+  end
+
+  def toastr_flash_type type
+    case type
+    when :notice then "info"
+    when :error then "error"
+    when :alert then "warning"
+    when :success then "success"
+    when :danger then "error"
     end
   end
 end

@@ -1,0 +1,9 @@
+<% unless flash.empty? %>
+  <script type="text/javascript">
+    <% [:notice, :error, :alert, :success, :danger].each do |type| %>
+      <% unless flash[type].blank? %>
+        toastr['<%= toastr_flash_type type %>']('<%= flash[type] %>');
+      <% end %>
+    <% end %>
+  </script>
+<% end %>
