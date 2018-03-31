@@ -6,3 +6,13 @@
 </div>
 
 <%= link_to "All article", articles_path %>
+
+<div>
+  <hr>
+  <%= render "comments/comments", comments: @article.comments %>
+</div>
+
+<div>
+  <hr>
+  <%= render "comments/form", commentable: @article, comment: @comment %>
+</div>

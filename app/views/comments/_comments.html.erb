@@ -1,0 +1,7 @@
+<div>
+  <% comments.each do |comment| %>
+    <div>
+      <span class="text-primary comment-author"><%= comment.user_name %>:</span> <%= comment.content %>
+    </div>
+  <% end %>
+</div>

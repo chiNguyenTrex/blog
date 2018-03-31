@@ -6,3 +6,13 @@
     <%= link_to "Back", books_path %>
   </div>
 </div>
+
+<div>
+  <hr>
+  <%= render "comments/comments", comments: @book.comments %>
+</div>
+
+<div>
+  <hr>
+  <%= render "comments/form", commentable: @book, comment: @comment %>
+</div>

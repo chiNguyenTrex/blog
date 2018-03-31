@@ -6,3 +6,13 @@
     <%= link_to "Back", events_path %>
   </div>
 </div>
+
+<div>
+  <hr>
+  <%= render "comments/comments", comments: @event.comments %>
+</div>
+
+<div>
+  <hr>
+  <%= render "comments/form", commentable: @event, comment: @comment %>
+</div>
