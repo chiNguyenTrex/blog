@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+
   def create
     @comment = current_user.comments.new comment_params
     if @comment.save

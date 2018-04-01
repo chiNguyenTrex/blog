@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
-  before_action :load_event, only: [:show, :update]
+  load_and_authorize_resource
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :load_event, only: [:show, :edit, :update, :destroy]
 
   def index
     @events = Event.all
@@ -24,7 +26,24 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
+    if @event.update_attributes(event_params)
+      flash[:success] = "Event updated"
+      redirect_to events_path
+    else
+      flash.now[:danger] = "There's something wrong"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @event.destroy
+      flash[:success] = "Event cancelled"
+      redirect_to events_path
+    end
   end
 
   private

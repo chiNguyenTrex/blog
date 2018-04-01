@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'addresses/index'
+
+  get 'addresses/new'
+
+  get 'addresses/edit'
+
+  get 'addresses/show'
+
   devise_for :users
   resources :tasks
   resources :informs
@@ -14,6 +22,6 @@ Rails.application.routes.draw do
   end
   resources :genres
 
-  root 'welcome#index'
+  root 'dashboard#index'
 
 end

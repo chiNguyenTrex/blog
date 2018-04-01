@@ -1,10 +1,18 @@
 class ArticlesController < ApplicationController
-  def new
-    @article = Article.new
-  end
+  load_and_authorize_resource
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :load_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = Article.all
+  end
+
+  def show
+    @comment = Comment.new
+  end
+
+  def new
+    @article = Article.new
   end
 
   def create
@@ -19,16 +27,32 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
-  def show
-    @article = Article.find(params[:id])
-    @comment = Comment.new
+  def update
+    if @article.update_attributes(article_params)
+      flash[:success] = "Article updated successfully"
+      redirect_to articles_path
+    else
+      flash.now[:danger] = "There's something wrong"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @article.destroy
+      flash[:success] = "Article deleted successfully"
+      redirect_to articles_path
+    end
   end
 
   private
+
   def article_params
     params.require(:article).permit :title, :text
+  end
+
+  def load_article
+    @article = Article.find(params[:id])
   end
 end

@@ -1,6 +1,13 @@
 <% if @genres %>
   <% @genres.each do |genre| %>
-    <p><%= genre.name %></p>
+    <p>
+      <%= genre.name %>
+      <span class="resource-link"><%= link_to "Show", genre_path(genre) %></span>
+      <% if user_signed_in? %>
+        <span class="resource-link"><%= link_to "Update", edit_genre_path(genre) %></span>
+        <span class="resource-link"><%= link_to "Delete", genre_path(genre), method: :delete %></span>
+      <% end %>
+    </p>
   <% end %>
 <% end %>
-<%= link_to "Create new genre", new_genre_path %>
+<%= link_to("New genre", new_genre_path) if user_signed_in? %>

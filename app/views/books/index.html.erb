@@ -1,6 +1,13 @@
 <% if @books %>
   <% @books.each do |book| %>
-    <p><%= book.name %><%= link_to "Show", book_path(book) %></p>
+    <p>
+      <%= book.name %><%= " (Genre: #{book.genre_name})" %>
+      <span class="resource-link"><%= link_to "Show", book_path(book) %></span>
+      <% if user_signed_in? %>
+        <span class="resource-link"><%= link_to "Update", edit_book_path(book) %></span>
+        <span class="resource-link"><%= link_to "Delete", book_path(book), method: :delete %></span>
+      <% end %>
+    </p>
   <% end %>
 <% end %>
-<%= link_to "New book", new_book_path %>
+<%= link_to("New book", new_book_path) if user_signed_in? %>

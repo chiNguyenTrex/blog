@@ -1,7 +1,14 @@
 <% if @events %>
   <% @events.each do |event| %>
-    <p><%= event.name %><%= link_to "Show", event_path(event) %></p>
+    <p>
+      <%= event.name %>
+      <span class="resource-link"><%= link_to "Show", event_path(event) %></span>
+      <% if user_signed_in? %>
+        <span class="resource-link"><%= link_to "Update", edit_event_path(event) %></span>
+        <span class="resource-link"><%= link_to "Delete", event_path(event), method: :delete %></span>
+      <% end %>
+    </p>
   <% end %>
 <% end %>
-<%= link_to "New event", new_event_path %>
+<%= link_to("New event", new_event_path) if user_signed_in? %>
 

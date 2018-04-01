@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  rolify
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
     :trackable, :validatable, :confirmable, :lockable, :zxcvbnable
 
@@ -16,8 +18,15 @@ class User < ApplicationRecord
 
   delegate :street, :city, to: :address
 
+  before_save :assign_user_role
 
   def send_devise_notification notification, *args
-    devise_mailer.send(notification, self, *args).deliver_now
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  private
+
+  def assign_user_role
+    self.add_role "user"
   end
 end

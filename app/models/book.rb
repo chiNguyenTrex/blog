@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  #has_many :comments, as: :commentable  Alternative by:
+  resourcify
   include Commentable
 
   belongs_to :author, class_name: User.name, foreign_key: :user_id

@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  #has_many :comments, as: :commentable  Alternative by:
+  resourcify
   include Commentable
 
   has_many :event_participations

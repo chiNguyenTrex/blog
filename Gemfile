@@ -19,7 +19,7 @@ gem "figaro"
 gem "sidekiq"
 gem "devise"
 gem "delayed_job_active_record"
-gem 'devise_zxcvbn'
+gem 'devise_zxcvbn' # password strength for devise
 gem "rolify"
 gem "cancancan"
 gem 'catpants', '2.5.0' # password strength

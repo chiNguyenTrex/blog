@@ -15,3 +15,24 @@
   list-style: none;
   padding-left: 0;
 }
+
+.navbar-brand {
+  font-size: 30px;
+  color: red !important;
+  font-weight: bold;
+}
+
+ul.nav.navbar-nav {
+  font-weight: bold;
+  li {
+    &:hover {
+      //background: #121FC8FF;
+      a {
+        color: red !important;
+      }
+    }
+    a {
+      color: navy !important;
+    }
+  }
+}

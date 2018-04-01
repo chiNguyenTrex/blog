@@ -12,7 +12,9 @@
   <%= render "comments/comments", comments: @article.comments %>
 </div>
 
-<div>
-  <hr>
-  <%= render "comments/form", commentable: @article, comment: @comment %>
-</div>
+<% if user_signed_in? %>
+  <div>
+    <hr>
+    <%= render "comments/form", commentable: @article, comment: @comment %>
+  </div>
+<% end %>
