@@ -1,0 +1,2 @@
+$('#comment-<%= @comment.id %>').empty();
+$('#comment-<%= @comment.id %>').append("<%=j render "comments/update_area", comment: @comment %>");

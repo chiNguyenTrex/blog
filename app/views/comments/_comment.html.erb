@@ -1,0 +1,6 @@
+<div>
+  <span class="text-primary comment-author"><%= comment.user_name %>:</span>
+  <span id="comment-<%= comment.id %>">
+    <%= render "comments/update_area", comment: comment %>
+  </span>
+</div>

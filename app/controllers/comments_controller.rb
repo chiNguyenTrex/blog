@@ -3,16 +3,30 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   def create
-    @comment = current_user.comments.new comment_params
-    if @comment.save
-      redirect_to commentable
+    @comment = current_user.comments.new(comment_params.merge commentable: commentable)
+    respond_to do |format|
+      if @comment.save
+        format.js
+      end
     end
   end
 
   def edit
+    @commentable = commentable
+    @comment = Comment.find params[:id]
+    respond_to {|format| format.js}
   end
 
   def update
+    @comment = Comment.find params[:id]
+    @commentable = commentable
+    respond_to do |format|
+      if @comment.update_attributes(comment_params)
+        format.js
+      else
+        format.js {render :edit}
+      end
+    end
   end
 
   def destroy
@@ -21,7 +35,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content).merge commentable: commentable
+    params.require(:comment).permit(:content)
   end
 
 =begin

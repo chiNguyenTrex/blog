@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  get 'addresses/index'
 
-  get 'addresses/new'
-
-  get 'addresses/edit'
-
-  get 'addresses/show'
+  namespace :admin do
+    root "users#index"
+    resources :users
+  end
 
   devise_for :users
   resources :tasks

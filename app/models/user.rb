@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   delegate :street, :city, to: :address
 
-  before_save :assign_user_role
+  after_create :assign_user_role
 
   def send_devise_notification notification, *args
     devise_mailer.send(notification, self, *args).deliver_later

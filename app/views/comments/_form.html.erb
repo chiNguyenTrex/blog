@@ -1,10 +1,8 @@
-<%= form_for [commentable, comment] do |f| %>
-  <%= render "shared/errors", object: f.object %>
+<%= form_for [commentable, comment], remote: true do |f| %>
   <div class="row">
     <div class="col-md-4">
       <div class="form-group">
-        <%= f.text_area :content, class: "form-control" %>
-        <%= f.submit "Add", class: "btn btn-success" %>
+        <%= f.text_field :content, class: "form-control", placeholder: "Add a comment..." %>
       </div>
     </div>
   </div>

@@ -1,0 +1,3 @@
+<span><%= comment.content %></span>
+<span><%= link_to "Update", edit_polymorphic_path([comment.commentable, comment]),
+  remote: true %></span>
