@@ -1,11 +1,12 @@
+
+//= require jquery
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 //= require bootstrap
-//= require jquery
-////= require jquery_ujs
 //= require bootstrap-sprockets
 //= require toastr
+//= require catpants
+//= require_tree .
 
 $(document).ready(function() {
   window.setTimeout(function() {

@@ -19,6 +19,10 @@ gem "figaro"
 gem "sidekiq"
 gem "devise"
 gem "delayed_job_active_record"
+gem 'devise_zxcvbn'
+gem "rolify"
+gem "cancancan"
+gem 'catpants', '2.5.0' # password strength
 
 group :development, :test do
   gem "sqlite3", "1.3.13"

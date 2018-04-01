@@ -1,6 +1,6 @@
 <% if object.errors.any? %>
-  <div class="text-danger">
-    <ul>
+  <div>
+    <ul class="form-error">
       <% object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
