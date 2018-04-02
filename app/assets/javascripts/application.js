@@ -1,8 +1,8 @@
 //= require jquery
-//= require jquery_ujs
 //= require sweetalert2
 //= require rails-ujs
 //= require turbolinks
+//= require jquery.turbolinks
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require toastr
