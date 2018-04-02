@@ -1,3 +1,5 @@
 <span><%= comment.content %></span>
 <span><%= link_to "Update", edit_polymorphic_path([comment.commentable, comment]),
   remote: true %></span>
+<span><%= link_to "Delete", [comment.commentable, comment], method: :delete,
+  remote: true %></span>

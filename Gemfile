@@ -23,6 +23,7 @@ gem 'devise_zxcvbn' # password strength for devise
 gem "rolify"
 gem "cancancan"
 gem 'catpants', '2.5.0' # password strength
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem "sqlite3", "1.3.13"
