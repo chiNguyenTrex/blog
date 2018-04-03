@@ -6,4 +6,6 @@ class Event < ApplicationRecord
   has_many :participants, through: :event_participations, source: :user
 
   validates :name, presence: true
+
+  scope :search, ->(term){where "name LIKE ?", "%#{term}%"}
 end
