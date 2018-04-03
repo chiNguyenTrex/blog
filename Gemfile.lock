@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: f8e1b81f8da82ea9eb88c4939a3a6801f97e5ac1
+  branch: master
+  specs:
+    faker (1.8.7)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -49,7 +57,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
-    byebug (10.0.1)
+    byebug (10.0.2)
     cancancan (2.1.3)
     capybara (2.18.0)
       addressable
@@ -61,6 +69,7 @@ GEM
     catpants (2.5.0)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
+    chronic (0.10.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -177,7 +186,7 @@ GEM
     selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
-    sidekiq (5.1.2)
+    sidekiq (5.1.3)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
@@ -217,6 +226,8 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    whenever (0.10.0)
+      chronic (>= 0.6.3)
     xpath (3.0.0)
       nokogiri (~> 1.8)
     zxcvbn-js (4.4.3)
@@ -235,6 +246,7 @@ DEPENDENCIES
   delayed_job_active_record
   devise
   devise_zxcvbn
+  faker!
   figaro
   jbuilder (~> 2.5)
   jquery-rails (= 4.3.1)
@@ -253,6 +265,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  whenever
 
 BUNDLED WITH
    1.16.1

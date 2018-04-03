@@ -4,7 +4,11 @@ class EventsController < ApplicationController
   before_action :load_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = if params[:term].present?
+      Event.search params[:term]
+    else
+      Event.all
+    end
   end
 
   def new

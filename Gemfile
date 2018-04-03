@@ -24,6 +24,8 @@ gem "rolify"
 gem "cancancan"
 gem 'catpants', '2.5.0' # password strength
 gem 'jquery-turbolinks'
+gem 'whenever', require: false
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 group :development, :test do
   gem "sqlite3", "1.3.13"

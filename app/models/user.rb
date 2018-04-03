@@ -29,4 +29,6 @@ class User < ApplicationRecord
   def assign_user_role
     self.add_role "user"
   end
+
+
 end
