@@ -5,6 +5,8 @@
 //= require jquery.turbolinks
 //= require bootstrap
 //= require bootstrap-sprockets
+//= require moment
+//= require bootstrap-datetimepicker
 //= require toastr
 //= require catpants
 //= require_tree .
@@ -16,7 +18,7 @@ $(document).on('turbolinks:load', function() {
         $(this).remove();
     });
   }, 2000);
-
+  $('#datetimepicker1').datetimepicker();
 });
 
 toastr.options = {

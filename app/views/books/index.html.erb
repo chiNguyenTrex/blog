@@ -1,12 +1,9 @@
-<div class="row search-area">
-  <%= render "search" %>
-</div>
-
+<%= render "search" %>
 <div class="row list-area">
   <% if @books %>
     <% @books.each do |book| %>
       <p>
-        <%= book.name %>
+        <%= "#{book.name} #{book.price}$" %>
         <%= " (Genre: #{book.genre_name}. Author: #{book.author_name})" %>
         <span class="resource-link">
           <%= link_to "Show", book_path(book) %>
