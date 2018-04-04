@@ -5,7 +5,8 @@ class BooksController < ApplicationController
   before_action :load_genres, only: [:new, :edit]
 
   def index
-    @books = Book.all
+    @search = Book.ransack params[:q]
+    @books = @search.result.includes :genre, :author
   end
 
   def new
