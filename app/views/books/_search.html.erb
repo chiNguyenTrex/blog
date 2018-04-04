@@ -1,42 +1,54 @@
-<div class="col-md-4">
-  <h1>Implementation 1</h1>
-  <%= search_form_for @search do |f| %>
-    <div class="form-group">
-      <%= f.label :keyword %>
-      <%= f.search_field :name_or_author_name_or_genre_name_cont,
-        placeholder: "Search by name, author, genre", class: "form-control" %>
-    </div>
+<div class="row search-area">
+  <div class="col-md-4">
+    <h1>Ransack 1</h1>
+    <%= search_form_for @search do |f| %>
+      <div class="form-group">
+        <%= f.label :keyword %>
+        <%= f.search_field :name_or_author_name_or_genre_name_cont,
+          placeholder: "Search by name, author, genre", class: "form-control" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.submit "Search", name: nil, class: "btn btn-success" %>
-    </div>
-  <% end %>
-</div>
+      <div class="form-group">
+        <%= f.label :price, "Price >=" %>
+        <%= f.search_field :price_gteq, class: "form-control" %>
+      </div>
 
-<div class="col-md-4">
-  <h1>Implementation 2</h1>
-  <%= search_form_for @search do |f| %>
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.search_field :name_cont,
-        placeholder: "Search by name", class: "form-control" %>
-    </div>
+      <div class="form-group">
+        <%= f.label :price, "Price <=" %>
+        <%= f.search_field :price_lteq, class: "form-control" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :author, "Author" %>
-      <%= f.collection_select :author_id_eq, User.all, :id, :name,
-        {include_blank: "Author name"} , {class: "form-control"} %>
-    </div>
+      <div class="form-group">
+        <%= f.submit "Search", name: nil, class: "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
 
-    <div class="form-group">
-      <%= f.label :genre, "Genre" %>
-      <%= f.collection_select :genre_id_eq, Genre.all, :id, :name,
-        {include_blank: "Genre title"} , {class: "form-control"} %>
-    </div>
+  <div class="col-md-4">
+    <h1>Ransack 2</h1>
+    <%= search_form_for @search do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.search_field :name_cont,
+          placeholder: "Search by name", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :author, "Author" %>
+        <%= f.collection_select :author_id_eq, User.all, :id, :name,
+          {include_blank: "Author name"} , {class: "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :genre, "Genre" %>
+        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name,
+          {include_blank: "Genre title"} , {class: "form-control"} %>
+      </div>
 
 
-    <div class="form-group">
-      <%= f.submit "Search", name: nil, class: "btn btn-success" %>
-    </div>
-  <% end %>
+      <div class="form-group">
+        <%= f.submit "Search", name: nil, class: "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
 </div>

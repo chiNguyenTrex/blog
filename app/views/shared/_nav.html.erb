@@ -8,8 +8,7 @@
       <li><%= link_to "Books", books_path %></li>
       <li><%= link_to "Articles", articles_path %></li>
       <li><%= link_to "Events", events_path %></li>
-      <li><%= link_to "Addresses", addresses_path %></li>
-      <li><%= link_to "Tasks", tasks_path %></li>
+      <li><%= link_to "Projects", projects_path %></li>
       <% if user_signed_in? %>
         <li><%= link_to "Account", edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>

@@ -7,5 +7,5 @@ class Event < ApplicationRecord
 
   validates :name, presence: true
 
-  scope :search, ->(term){where "name LIKE ?", "%#{term}%"}
+  scope :search_by_term, ->(term){where "name LIKE ?", "%#{term}%"}
 end

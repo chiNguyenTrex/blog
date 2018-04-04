@@ -28,6 +28,13 @@ gem 'whenever', require: false
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'ransack'
 
+# gem 'sunspot_rails'
+# gem 'sunspot_solr'
+# gem 'progress_bar'
+
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+
 group :development, :test do
   gem "sqlite3", "1.3.13"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

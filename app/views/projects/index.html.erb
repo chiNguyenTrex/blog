@@ -1,0 +1,26 @@
+
+<div class="row list-area">
+  <% if @projects %>
+    <% @projects.each do |project| %>
+      <p>
+        <%= "#{project.name} #{project.start}" %>
+        <%= " (Project manager: #{project.project_manager_name})" %>.
+        Description: <%= project.description %>
+        <span class="resource-link">
+          <%= link_to "Show", project_path(project) %>
+        </span>
+        <% if user_signed_in? %>
+          <span class="resource-link">
+            <%= link_to "Update", edit_project_path(project) %>
+          </span>
+          <span class="resource-link">
+            <%= link_to "Delete", project_path(project), method: :delete %>
+          </span>
+        <% end %>
+      </p>
+    <% end %>
+  <% end %>
+  <%= link_to("New project", new_project_path) if user_signed_in? %>
+</div>
+
+

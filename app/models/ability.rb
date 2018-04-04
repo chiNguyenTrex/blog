@@ -11,6 +11,8 @@ class Ability
         can :manage, Book, user_id: user.id
         can :manage, Article, user_id: user.id
         can :manage, Comment, user_id: user.id
+        can :manage, Project, user_id: user.id
+        can :manage, Task, project: {user_id: user.id}
       end
       can :read, :all
     end

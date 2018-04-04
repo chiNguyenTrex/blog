@@ -16,6 +16,8 @@ class User < ApplicationRecord
 
   has_many :comments
 
+  has_many :projects
+
   delegate :street, :city, to: :address
 
   after_create :assign_user_role
