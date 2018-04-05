@@ -1,5 +1,8 @@
-<h1>Simple search</h1>
-<%= form_tag events_path, method: :get do %>
-  <%= text_field_tag :term, params[:term], placeholder: "Search...",
-    class: "search-form" %>
-<% end %>
+<div class="row search-area">
+  <div class="col-md-4">
+    <h1>Elasticsearch</h1>
+    <%= form_tag projects_path, method: :get do %>
+      <%= text_field_tag :q, params[:q], placeholder: "Search...", class: "search-form" %>
+    <% end %>
+  </div>
+</div>

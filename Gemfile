@@ -26,11 +26,14 @@ gem 'catpants', '2.5.0' # password strength
 gem 'jquery-turbolinks'
 gem 'whenever', require: false
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-gem 'ransack'
+#gem 'ransack'
 
 # gem 'sunspot_rails'
 # gem 'sunspot_solr'
 # gem 'progress_bar'
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'

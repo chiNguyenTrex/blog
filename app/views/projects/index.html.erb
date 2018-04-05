@@ -1,9 +1,9 @@
-
+<%= render "search" %>
 <div class="row list-area">
   <% if @projects %>
     <% @projects.each do |project| %>
       <p>
-        <%= "#{project.name} #{project.start}" %>
+        <%= project.try(:highlight).try(:name) ? project.highlight.name[0].html_safe : project.name %>
         <%= " (Project manager: #{project.project_manager_name})" %>.
         Description: <%= project.description %>
         <span class="resource-link">
